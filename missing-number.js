@@ -18,10 +18,17 @@ stdin.on("end", function () {
 
 function main([num, entries]){
     const n = +num;
+    
+    // Formula to find the sum of n numbers without looping through them
     const sumOfN = n*((1+n)/2);
+    
+    // Split string to array and then use reduce for summation of each of the entries;
     const sum = entries.split(' ').reduce( (acc, curr) => {
         acc += parseInt(curr) ;
         return acc;
     },0)
+    
+    // Find the difference between the sum of given entries vs actual sum should have been 
+    // for n numbers to get the mising number
     return (sumOfN - sum).toString();
 }
