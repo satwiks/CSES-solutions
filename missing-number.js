@@ -16,7 +16,12 @@ stdin.on("end", function () {
     stdout.write(main(inputData.split("\n")).toString());
 });
 
-function main([input]){
-    // TODO Here
-    return input;
+function main([num, entries]){
+    const n = +num;
+    const sumOfN = n*((1+n)/2);
+    const sum = entries.split(' ').reduce( (acc, curr) => {
+        acc += parseInt(curr) ;
+        return acc;
+    },0)
+    return (sumOfN - sum).toString();
 }

@@ -17,6 +17,15 @@ stdin.on("end", function () {
 });
 
 function main([input]){
-    // TODO Here
-    return input;
+    let num = +input; // parse string to a number type
+    let path = ''+num;
+
+    while(num !== 1){ // Loop until num becomes 1
+        // use % to get reminder to identify as 1 for odd and 0 for even when divided by 2;
+        num = num%2 ? 3*(num)+1 : num/2;
+
+        // append each occurrence to path string;
+        path = path + ' ' + num;
+    }
+    return path;
 }
